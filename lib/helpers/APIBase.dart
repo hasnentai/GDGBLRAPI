@@ -13,7 +13,7 @@ class APIBase {
     try {
       /// Store the response from the server
       final response = await http.get(_baseUrl + url);
-     
+    
 
       /// decode the response using dart:convert lib
       responseJson = _decodeResponse(response);

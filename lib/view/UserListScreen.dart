@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '../models/UserModel.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +25,11 @@ class UserListScreen extends StatelessWidget {
         leading:  Padding(
           padding: const EdgeInsets.all(2.0),
           child: ClipRRect(borderRadius: BorderRadius.circular(100),
-            child: Image(image: NetworkImage(list[i].avatar))),
+            child: CachedNetworkImage(
+                                      placeholder: (context, url) =>
+                                          CircularProgressIndicator(),
+                                      imageUrl: list[i].avatar,
+                                    ),),
         ),
         title: Text(list[i].firstName +" "+ list[i].lastName),
         subtitle: Text(list[i].email),

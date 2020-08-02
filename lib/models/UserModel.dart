@@ -14,7 +14,7 @@ class User {
       this.data,
       this.ad});
 
-  User.fromJson(Map<String, dynamic> json) {
+  User.fromJson(Map<String, dynamic> json ) {
     page = json['page'];
     perPage = json['per_page'];
     total = json['total'];
